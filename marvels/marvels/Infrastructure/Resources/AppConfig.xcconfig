@@ -1,0 +1,18 @@
+//
+//  AppConfig.xcconfig
+//  marvels
+//
+//  Created by Aitor Pagán on 06/12/2018.
+//  Copyright © 2018 Aitor Pagán. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+//Global
+timeout             = 10
+
+//Marvel
+marvel_base_url     = https:\/\/gateway.marvel.com:443/v$(marvel_api_version)/public
+marvel_api_key      = ADD YOUR API KEY HERE
+marvel_api_version  = 1
