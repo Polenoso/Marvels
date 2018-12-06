@@ -18,6 +18,13 @@
 		D46ED33621B96C0F006EFC4B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED33521B96C0F006EFC4B /* RootViewController.swift */; };
 		D46ED33A21B9753B006EFC4B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED33921B9753B006EFC4B /* Environment.swift */; };
 		D46ED33D21B97B86006EFC4B /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED33C21B97B86006EFC4B /* Errors.swift */; };
+		D46ED34021B9807F006EFC4B /* SeriesScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46ED33F21B9807F006EFC4B /* SeriesScene.storyboard */; };
+		D46ED34221B98097006EFC4B /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED34121B98097006EFC4B /* SeriesViewController.swift */; };
+		D46ED34421B980C0006EFC4B /* SeriesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED34321B980C0006EFC4B /* SeriesWorker.swift */; };
+		D46ED34621B980D0006EFC4B /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED34521B980D0006EFC4B /* SeriesInteractor.swift */; };
+		D46ED34821B980EB006EFC4B /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED34721B980EB006EFC4B /* SeriesPresenter.swift */; };
+		D46ED34A21B9810D006EFC4B /* SeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED34921B9810D006EFC4B /* SeriesRouter.swift */; };
+		D46ED34C21B98138006EFC4B /* SeriesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46ED34B21B98138006EFC4B /* SeriesModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		D46ED33721B96DF3006EFC4B /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		D46ED33921B9753B006EFC4B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		D46ED33C21B97B86006EFC4B /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		D46ED33F21B9807F006EFC4B /* SeriesScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SeriesScene.storyboard; sourceTree = "<group>"; };
+		D46ED34121B98097006EFC4B /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		D46ED34321B980C0006EFC4B /* SeriesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesWorker.swift; sourceTree = "<group>"; };
+		D46ED34521B980D0006EFC4B /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
+		D46ED34721B980EB006EFC4B /* SeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
+		D46ED34921B9810D006EFC4B /* SeriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRouter.swift; sourceTree = "<group>"; };
+		D46ED34B21B98138006EFC4B /* SeriesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +132,7 @@
 		D46ED32921B94BBE006EFC4B /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				D46ED33E21B98050006EFC4B /* Series Scene */,
 				D46ED33221B96B2D006EFC4B /* Root Scene */,
 				D46ED32D21B95039006EFC4B /* LaunchApp */,
 			);
@@ -167,6 +182,20 @@
 				D46ED33C21B97B86006EFC4B /* Errors.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		D46ED33E21B98050006EFC4B /* Series Scene */ = {
+			isa = PBXGroup;
+			children = (
+				D46ED33F21B9807F006EFC4B /* SeriesScene.storyboard */,
+				D46ED34121B98097006EFC4B /* SeriesViewController.swift */,
+				D46ED34321B980C0006EFC4B /* SeriesWorker.swift */,
+				D46ED34521B980D0006EFC4B /* SeriesInteractor.swift */,
+				D46ED34721B980EB006EFC4B /* SeriesPresenter.swift */,
+				D46ED34921B9810D006EFC4B /* SeriesRouter.swift */,
+				D46ED34B21B98138006EFC4B /* SeriesModels.swift */,
+			);
+			path = "Series Scene";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +283,7 @@
 				D46ED33421B96B6C006EFC4B /* RootScene.storyboard in Resources */,
 				D46ED31221B94B7B006EFC4B /* LaunchScreen.storyboard in Resources */,
 				D46ED30F21B94B7B006EFC4B /* Assets.xcassets in Resources */,
+				D46ED34021B9807F006EFC4B /* SeriesScene.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +303,14 @@
 			files = (
 				D46ED32C21B94DD3006EFC4B /* Application.swift in Sources */,
 				D46ED32F21B95056006EFC4B /* LaunchScreenViewController.swift in Sources */,
+				D46ED34421B980C0006EFC4B /* SeriesWorker.swift in Sources */,
+				D46ED34221B98097006EFC4B /* SeriesViewController.swift in Sources */,
+				D46ED34C21B98138006EFC4B /* SeriesModels.swift in Sources */,
 				D46ED33621B96C0F006EFC4B /* RootViewController.swift in Sources */,
+				D46ED34A21B9810D006EFC4B /* SeriesRouter.swift in Sources */,
 				D46ED30821B94B79006EFC4B /* AppDelegate.swift in Sources */,
+				D46ED34621B980D0006EFC4B /* SeriesInteractor.swift in Sources */,
+				D46ED34821B980EB006EFC4B /* SeriesPresenter.swift in Sources */,
 				D46ED33D21B97B86006EFC4B /* Errors.swift in Sources */,
 				D46ED33A21B9753B006EFC4B /* Environment.swift in Sources */,
 			);
