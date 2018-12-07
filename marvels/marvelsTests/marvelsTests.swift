@@ -23,8 +23,8 @@ class marvelsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let ts = Date().timeIntervalSince1970.description
-        let privateKey = "a8e6210f3ed608f517e26177b8d9cec27b9e76d5"
-        let publicKey = "299a2b57d63037a28c4d0cbe2f001b37"
+        let privateKey = ""
+        let publicKey = ""
         let hash = "\(ts)\(privateKey)\(publicKey)".md5Digest()
         let url = URL(string: "https://gateway.marvel.com:443/v1/public/series")
         var request = URLRequest(url:url!)
