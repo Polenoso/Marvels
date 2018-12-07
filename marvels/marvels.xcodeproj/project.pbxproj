@@ -33,6 +33,9 @@
 		D49F6A4121B9BF0100176241 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49F6A3E21B9BF0100176241 /* Kingfisher.framework */; };
 		D4D956C421BAD3B000DC4C3D /* UIViewController+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956C321BAD3B000DC4C3D /* UIViewController+Display.swift */; };
 		D4D956C721BAD54800DC4C3D /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956C621BAD54800DC4C3D /* MarvelAPI.swift */; };
+		D4D956CA21BADE6700DC4C3D /* SeriesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956C921BADE6700DC4C3D /* SeriesStore.swift */; };
+		D4D956CD21BAF45B00DC4C3D /* SeriesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956CC21BAF45B00DC4C3D /* SeriesWorkerTests.swift */; };
+		D4D956D021BAF5D100DC4C3D /* seriesExample.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D956CF21BAF5D100DC4C3D /* seriesExample.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		D49F6A3E21B9BF0100176241 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		D4D956C321BAD3B000DC4C3D /* UIViewController+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Display.swift"; sourceTree = "<group>"; };
 		D4D956C621BAD54800DC4C3D /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
+		D4D956C921BADE6700DC4C3D /* SeriesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesStore.swift; sourceTree = "<group>"; };
+		D4D956CC21BAF45B00DC4C3D /* SeriesWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesWorkerTests.swift; sourceTree = "<group>"; };
+		D4D956CF21BAF5D100DC4C3D /* seriesExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seriesExample.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,8 @@
 		D46ED31B21B94B7B006EFC4B /* marvelsTests */ = {
 			isa = PBXGroup;
 			children = (
+				D4D956CE21BAF5D100DC4C3D /* Resources */,
+				D4D956CB21BAF42700DC4C3D /* Series Scene Tests */,
 				D46ED31C21B94B7B006EFC4B /* marvelsTests.swift */,
 				D46ED31E21B94B7B006EFC4B /* Info.plist */,
 			);
@@ -155,6 +163,7 @@
 		D46ED32921B94BBE006EFC4B /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				D4D956C821BADE4F00DC4C3D /* Stores */,
 				D46ED33E21B98050006EFC4B /* Series Scene */,
 				D46ED33221B96B2D006EFC4B /* Root Scene */,
 				D46ED32D21B95039006EFC4B /* LaunchApp */,
@@ -265,6 +274,30 @@
 			path = "Marvel API";
 			sourceTree = "<group>";
 		};
+		D4D956C821BADE4F00DC4C3D /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956C921BADE6700DC4C3D /* SeriesStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		D4D956CB21BAF42700DC4C3D /* Series Scene Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956CC21BAF45B00DC4C3D /* SeriesWorkerTests.swift */,
+			);
+			path = "Series Scene Tests";
+			sourceTree = "<group>";
+		};
+		D4D956CE21BAF5D100DC4C3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956CF21BAF5D100DC4C3D /* seriesExample.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D956D021BAF5D100DC4C3D /* seriesExample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +428,7 @@
 			files = (
 				D46ED32C21B94DD3006EFC4B /* Application.swift in Sources */,
 				D46ED35521B9AA34006EFC4B /* String+Tools.swift in Sources */,
+				D4D956CA21BADE6700DC4C3D /* SeriesStore.swift in Sources */,
 				D46ED32F21B95056006EFC4B /* LaunchScreenViewController.swift in Sources */,
 				D46ED34421B980C0006EFC4B /* SeriesWorker.swift in Sources */,
 				D46ED34221B98097006EFC4B /* SeriesViewController.swift in Sources */,
@@ -416,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D956CD21BAF45B00DC4C3D /* SeriesWorkerTests.swift in Sources */,
 				D46ED31D21B94B7B006EFC4B /* marvelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

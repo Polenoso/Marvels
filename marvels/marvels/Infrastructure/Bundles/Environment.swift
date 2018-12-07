@@ -31,7 +31,7 @@ public struct Environment {
         case .marvelApiKey:
             return infoDict[PlistKey.marvelApiKey.rawValue] as! String
         case .marvelPrivateKey:
-            return infoDict[PlistKey.marvePrivateKey.rawValue] as! String
+            return infoDict[PlistKey.marvelPrivateKey.rawValue] as! String
         case .marvelBaseUrl:
             return infoDict[PlistKey.marvelBaseUrl.rawValue] as! String
         case .marvelApiVersion:

@@ -21,7 +21,7 @@ final class SeriesInteractor: SeriesInputProtocol, SeriesDataSource {
     var selectedSerie: Any?
     var outputWrapper: SeriesWrapperProtocol?
     
-    var service: SeriesWorkerProtocol? = SeriesWorker()
+    var service: SeriesWorkerProtocol? = SeriesWorker(with: SeriesNetworkStore())
     
     func fetchSeries(request: SeriesModels.GetSeries.Request) {
         outputWrapper?.presentSeries(response: SeriesModels.GetSeries.Response())

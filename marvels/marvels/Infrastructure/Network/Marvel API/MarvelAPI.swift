@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MarvelAPIConfig {
+private struct MarvelAPIConfig {
     static let apiversion = Environment.configuration(.marvelApiVersion)
     static let baseUrl = Environment.configuration(.marvelBaseUrl)
     static let apiKey = Environment.configuration(.marvelApiKey)
@@ -29,23 +29,23 @@ enum MarvelPaths: String {
 }
 
 protocol MarvelApiFacade {
-    func executeRequest<T:Decodable>(type: T.Type, path: MarvelPaths, query: [String : Any], completion: @escaping ((T?,Error?) -> ()))
+    func executeRequest<T:Decodable>(type: T.Type, path: MarvelPaths, query: [String : Any]?, completion: @escaping ((T?,Error?) -> ()))
 }
 
 final class MarvelAPIManager: MarvelApiFacade {
     
-    let defaultParameters: [String: Any] = ["ts": MarvelAPIConfig.ts,
+    private let defaultParameters: [String: Any] = ["ts": MarvelAPIConfig.ts,
                              "apikey" : MarvelAPIConfig.apiKey,
                              "hash": MarvelAPIConfig.hash]
     
-    let defaultApiHeaders: [String : String] = [:]
+    private let defaultApiHeaders: [String : String] = [:]
     
-    let defaultParsingPath = "data.results"
+    private let defaultParsingPath = "data.results"
     
 
-    func executeRequest<T>(type: T.Type, path: MarvelPaths, query: [String : Any], completion: @escaping ((T?, Error?) -> ())) where T : Decodable {
+    func executeRequest<T>(type: T.Type, path: MarvelPaths, query: [String : Any]?, completion: @escaping ((T?, Error?) -> ())) where T : Decodable {
         
-        let params = defaultParameters.merging(query, uniquingKeysWith: { (_, new) -> Any in
+        let params = defaultParameters.merging(query ?? [:], uniquingKeysWith: { (_, new) -> Any in
             return new
         })
         

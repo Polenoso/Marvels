@@ -40,6 +40,10 @@ extension Serie: Codable {
     }
 }
 
+extension Serie: Hashable {
+    public var hashValue: Int { return id.hashValue }
+}
+
 public struct Thumbnail {
     let path: String?
     let ext: String?
