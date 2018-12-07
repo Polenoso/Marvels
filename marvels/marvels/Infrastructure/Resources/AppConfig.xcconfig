@@ -13,6 +13,6 @@
 
 
 //Marvel
-marvel_base_url     = https:\/\/gateway.marvel.com:443/v$(marvel_api_version)/public
 marvel_api_key      = ADD YOUR API KEY HERE
+marvel_base_url     = gateway.marvel.com:443/v$(marvel_api_version)/public
 marvel_api_version  = 1

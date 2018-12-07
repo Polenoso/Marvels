@@ -17,6 +17,7 @@ final class SeriesPresenter: SeriesWrapperProtocol {
     weak var output: SeriesOutputProtocol?
     
     func presentSeries(response: SeriesModels.GetSeries.Response) {
-        output?.displaySeries(viewModel: SeriesModels.GetSeries.ViewModel())
+        let displayed: [SeriesModels.GetSeries.Displayed] = response.result.compactMap({SeriesModels.GetSeries.Displayed.init(title: $0.title ?? "", image: URL(string: $0.thumbnail?.path ?? "")!)})
+        output?.displaySeries(viewModel: SeriesModels.GetSeries.ViewModel.init(viewModel: displayed))
     }
 }

@@ -49,9 +49,9 @@ final class MarvelAPIManager: MarvelApiFacade {
             return new
         })
         
-        let url = URL(string: "\(MarvelAPIConfig.baseUrl)/\(path.rawValue)")!
+        let url = URL(string: "\(MarvelAPIConfig.baseUrl)/\(path.rawValue)")
         
-        let networkRequest = NetworkRequest.init(url: url, parameters: params, headers: defaultApiHeaders, method: path.method(), parsingPath: defaultParsingPath)
+        let networkRequest = NetworkRequest.init(url: url!, parameters: params, headers: defaultApiHeaders, method: path.method(), parsingPath: defaultParsingPath)
         
         Network.shared.requestData(type: type, request: networkRequest) { (data, error) in
             completion(data,error)

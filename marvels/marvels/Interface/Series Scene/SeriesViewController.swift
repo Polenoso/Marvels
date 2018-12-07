@@ -48,12 +48,13 @@ final class SeriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchSeries()
         // Do any additional setup after loading the view.
     }
     
     private func fetchSeries() {
-        input?.fetchSeries(request: SeriesModels.GetSeries.Request())
+        let request = SeriesModels.GetSeries.Request.init(query: "")
+        input?.fetchSeries(request: request)
     }
 
 }
@@ -61,6 +62,6 @@ final class SeriesViewController: UIViewController {
 extension SeriesViewController: SeriesOutputProtocol {
     
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel) {
-        
+        debugPrint(viewModel.viewModel)
     }
 }

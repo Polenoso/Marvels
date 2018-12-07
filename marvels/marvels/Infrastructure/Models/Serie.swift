@@ -24,6 +24,7 @@ public struct Serie {
     let endYear: Int?
     let rating: String?
     let type: SerieType?
+    let thumbnail: Thumbnail?
     let modified: String?
 }
 
@@ -37,6 +38,7 @@ extension Serie: Codable {
         case rating
         case type
         case modified
+        case thumbnail
     }
 }
 
@@ -44,7 +46,7 @@ extension Serie: Hashable {
     public var hashValue: Int { return id.hashValue }
 }
 
-public struct Thumbnail {
+public struct Thumbnail: Hashable {
     let path: String?
     let ext: String?
 }
