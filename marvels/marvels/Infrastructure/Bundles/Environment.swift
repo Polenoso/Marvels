@@ -10,9 +10,9 @@
 import Foundation
 
 public enum PlistKey : String {
-    case timeout
     case marvelBaseUrl = "marvel_base_url"
     case marvelApiKey = "marvel_api_key"
+    case marvelPrivateKey = "marvel_private_key"
     case marvelApiVersion = "marvel_api_version"
 }
 public struct Environment {
@@ -30,12 +30,12 @@ public struct Environment {
         switch key {
         case .marvelApiKey:
             return infoDict[PlistKey.marvelApiKey.rawValue] as! String
+        case .marvelPrivateKey:
+            return infoDict[PlistKey.marvePrivateKey.rawValue] as! String
         case .marvelBaseUrl:
             return infoDict[PlistKey.marvelBaseUrl.rawValue] as! String
         case .marvelApiVersion:
             return infoDict[PlistKey.marvelApiVersion.rawValue] as! String
-        case .timeout:
-            return infoDict[PlistKey.timeout.rawValue] as! String
         }
     }
 }

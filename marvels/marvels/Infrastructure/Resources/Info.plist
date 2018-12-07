@@ -43,9 +43,9 @@
 	<string>$(marvel_base_url)</string>
 	<key>marvel_api_key</key>
 	<string>$(marvel_api_key)</string>
+	<key>marvel_private_key</key>
+	<string>$(marvel_private_key)</string>
 	<key>marvel_api_version</key>
 	<string>$marvel_api_version)</string>
-	<key>timeout</key>
-	<string>$(timeout)</string>
 </dict>
 </plist>

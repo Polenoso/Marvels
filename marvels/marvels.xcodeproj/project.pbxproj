@@ -31,6 +31,8 @@
 		D49F6A3F21B9BF0100176241 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49F6A3C21B9BF0100176241 /* Alamofire.framework */; };
 		D49F6A4021B9BF0100176241 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49F6A3D21B9BF0100176241 /* CryptoSwift.framework */; };
 		D49F6A4121B9BF0100176241 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49F6A3E21B9BF0100176241 /* Kingfisher.framework */; };
+		D4D956C421BAD3B000DC4C3D /* UIViewController+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956C321BAD3B000DC4C3D /* UIViewController+Display.swift */; };
+		D4D956C721BAD54800DC4C3D /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956C621BAD54800DC4C3D /* MarvelAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		D49F6A3C21B9BF0100176241 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D49F6A3D21B9BF0100176241 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		D49F6A3E21B9BF0100176241 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		D4D956C321BAD3B000DC4C3D /* UIViewController+Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Display.swift"; sourceTree = "<group>"; };
+		D4D956C621BAD54800DC4C3D /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,7 @@
 		D46ED35021B995A5006EFC4B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D4D956C521BAD53900DC4C3D /* Marvel API */,
 				D46ED35121B995C2006EFC4B /* Network.swift */,
 			);
 			path = Network;
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				D46ED35421B9AA34006EFC4B /* String+Tools.swift */,
+				D4D956C321BAD3B000DC4C3D /* UIViewController+Display.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -249,6 +255,14 @@
 				D49F6A3E21B9BF0100176241 /* Kingfisher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4D956C521BAD53900DC4C3D /* Marvel API */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956C621BAD54800DC4C3D /* MarvelAPI.swift */,
+			);
+			path = "Marvel API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,7 +399,9 @@
 				D46ED34221B98097006EFC4B /* SeriesViewController.swift in Sources */,
 				D46ED34F21B98832006EFC4B /* Serie.swift in Sources */,
 				D46ED34C21B98138006EFC4B /* SeriesModels.swift in Sources */,
+				D4D956C421BAD3B000DC4C3D /* UIViewController+Display.swift in Sources */,
 				D46ED33621B96C0F006EFC4B /* RootViewController.swift in Sources */,
+				D4D956C721BAD54800DC4C3D /* MarvelAPI.swift in Sources */,
 				D46ED34A21B9810D006EFC4B /* SeriesRouter.swift in Sources */,
 				D46ED30821B94B79006EFC4B /* AppDelegate.swift in Sources */,
 				D46ED34621B980D0006EFC4B /* SeriesInteractor.swift in Sources */,
