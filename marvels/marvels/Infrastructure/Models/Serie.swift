@@ -47,8 +47,12 @@ extension Serie: Hashable {
 }
 
 public struct Thumbnail: Hashable {
-    let path: String?
-    let ext: String?
+    var path: String = ""
+    var ext: String = ""
+    
+    func fullPath() -> String {
+        return "\(path).\(ext)"
+    }
 }
 
 extension Thumbnail: Codable {

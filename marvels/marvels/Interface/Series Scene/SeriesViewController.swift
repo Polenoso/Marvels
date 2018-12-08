@@ -8,11 +8,20 @@
 
 import UIKit
 
+protocol SeriesDelegate: class {
+    func didSelectItem(at index: IndexPath)
+}
+
 protocol SeriesOutputProtocol: class {
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel)
 }
 
 final class SeriesViewController: UIViewController {
+    
+    @IBOutlet private var collectionView: UICollectionView!
+    
+    private var seriesCollectionViewDataSource: SeriesCollectionViewDataSource?
+    private let seriesDelegate = SeriesCollectionDelegate()
     
     var input: SeriesInputProtocol?
     var router: (SeriesNavigationProtocol & SeriesDataPassing)?
@@ -48,8 +57,13 @@ final class SeriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
         fetchSeries()
-        // Do any additional setup after loading the view.
+    }
+    
+    private func setupCollectionView() {
+        seriesDelegate.delegate = self
+        seriesCollectionViewDataSource = SeriesCollectionViewDataSource(items: [], collectionView: self.collectionView, delegate: seriesDelegate)
     }
     
     private func fetchSeries() {
@@ -62,6 +76,14 @@ final class SeriesViewController: UIViewController {
 extension SeriesViewController: SeriesOutputProtocol {
     
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel) {
-        debugPrint(viewModel.viewModel)
+        seriesCollectionViewDataSource?.items = viewModel.viewModel
+        seriesCollectionViewDataSource?.reloadData()
+        view.layoutIfNeeded()
+    }
+}
+
+extension SeriesViewController: SeriesDelegate {
+    func didSelectItem(at index: IndexPath) {
+        //TODO call input
     }
 }

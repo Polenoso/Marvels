@@ -20,7 +20,9 @@ final class SeriesNetworkStore: SeriesStore {
         var queryParams:[String : Any] = query?.isEmpty ?? true ? [:] : ["titleStartsWith" : query!]
         queryParams["offset"] = "\(offset)"
         apiManager.executeRequest(type: [Serie].self, path: MarvelPaths.series, query: queryParams) { (series, error) in
-            completion(series, error)
+            DispatchQueue.main.async {
+                completion(series, error)
+            }
         }
     }
 }
