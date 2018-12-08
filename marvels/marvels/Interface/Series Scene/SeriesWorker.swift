@@ -19,28 +19,31 @@ final class SeriesWorker: SeriesWorkerProtocol {
     
     var seriesStore: SeriesStore?
     
-    var seriesCache: Set<Serie> = Set<Serie>()
+    private static var seriesCache: Set<Serie> = Set<Serie>()
     
     init(with store: SeriesStore) {
         self.seriesStore = store
     }
     
     func cleanCache() {
-        seriesCache = []
+        SeriesWorker.seriesCache = []
     }
     
     func fetchSeries(with query: String?, offset: Int = 0, minCount: Int = 1, completion: @escaping (([Serie]?, Error?) -> ())) {
         
-        var series = filteredSeries(query: query ?? "")
+        let series = filteredSeries(query: query ?? "", by: offset)
         
-        if (series.count < minCount) {
-            requestMoreSeries(with: query, offset: min(offset, seriesCache.count)) { (newSeries, error) in
+        if (series.count < minCount || minCount == 0) {
+            let newOffset = filteredSeries(query: query ?? "", by: 0).count
+            requestMoreSeries(with: query, offset: newOffset) {(newSeries, error) in
                 if(newSeries?.count ?? 0 > 0) {
-                    self.seriesCache.formUnion(newSeries ?? [])
+                    SeriesWorker.seriesCache = SeriesWorker.seriesCache.union(newSeries ?? [])
                 }
-                series = self.filteredSeries(query: query ?? "")
-                completion(series,error)
+                completion(newSeries,error)
             }
+        }
+        if(series.count > 0) {
+            completion(series, nil)
         }
     }
     
@@ -50,7 +53,8 @@ final class SeriesWorker: SeriesWorkerProtocol {
         })
     }
     
-    fileprivate func filteredSeries(query: String) -> [Serie] {
-        return seriesCache.filter({$0.title?.starts(with: query) ?? true})
+    fileprivate func filteredSeries(query: String, by offset: Int = 0) -> [Serie] {
+        let index = SeriesWorker.seriesCache.index(SeriesWorker.seriesCache.startIndex, offsetBy: offset)
+        return SeriesWorker.seriesCache.suffix(from:index).filter({$0.title?.starts(with: query) ?? true})
     }
 }

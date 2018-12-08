@@ -10,14 +10,18 @@ import UIKit
 
 protocol SeriesDelegate: class {
     func didSelectItem(at index: IndexPath)
+    func prefetchItems(at index: [IndexPath])
 }
 
 protocol SeriesOutputProtocol: class {
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel)
+    func displayLoading(viewModel: SeriesModels.Loading.DisplayLoading)
+    func displayError(viewModel: SeriesModels.Error.DisplayError)
 }
 
 final class SeriesViewController: UIViewController {
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet private var collectionView: UICollectionView!
     
     private var seriesCollectionViewDataSource: SeriesCollectionViewDataSource?
@@ -62,12 +66,13 @@ final class SeriesViewController: UIViewController {
     }
     
     private func setupCollectionView() {
+        collectionView.prefetchDataSource = seriesDelegate
         seriesDelegate.delegate = self
         seriesCollectionViewDataSource = SeriesCollectionViewDataSource(items: [], collectionView: self.collectionView, delegate: seriesDelegate)
     }
     
-    private func fetchSeries() {
-        let request = SeriesModels.GetSeries.Request.init(query: "")
+    private func fetchSeries(_ index: Int = 0, query: String? = "", force: Bool = false) {
+        let request = SeriesModels.GetSeries.Request.init(query: query, maxIndex: index, forceRefresh: force)
         input?.fetchSeries(request: request)
     }
 
@@ -76,14 +81,38 @@ final class SeriesViewController: UIViewController {
 extension SeriesViewController: SeriesOutputProtocol {
     
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel) {
+        hideLoading()
         seriesCollectionViewDataSource?.items = viewModel.viewModel
         seriesCollectionViewDataSource?.reloadData()
         view.layoutIfNeeded()
     }
+    
+    func displayLoading(viewModel: SeriesModels.Loading.DisplayLoading) {
+        displayLoading()
+    }
+    
+    func displayError(viewModel: SeriesModels.Error.DisplayError) {
+        displayErrorMessage(viewModel.message, title: viewModel.title)
+    }
 }
 
 extension SeriesViewController: SeriesDelegate {
+    func prefetchItems(at index: [IndexPath]) {
+        fetchSeries(index.last?.item ?? 0)
+    }
+    
     func didSelectItem(at index: IndexPath) {
         //TODO call input
+    }
+}
+
+extension SeriesViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+        fetchSeries(0, query: searchBar.text, force: true)
+        if self.seriesCollectionViewDataSource?.items.count ?? 0 > 0 {
+            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+        }
+        
     }
 }

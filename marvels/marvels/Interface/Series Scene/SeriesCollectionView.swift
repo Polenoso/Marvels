@@ -39,7 +39,6 @@ final class SeriesCollectionViewDataSource: NSObject, MarvelCollectionViewDataSo
     }
     
     func reloadData() {
-        collectionView?.collectionViewLayout.invalidateLayout()
         collectionView?.reloadData()
     }
 }
@@ -54,7 +53,7 @@ final class SeriesCollectionDelegate: NSObject, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? SeriesCollectionViewCell {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.25) {
                 cell.backgroundContainerView.transform = .init(scaleX: 0.97, y: 0.97)
             }
         }
@@ -62,9 +61,18 @@ final class SeriesCollectionDelegate: NSObject, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? SeriesCollectionViewCell {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.25) {
                 cell.backgroundContainerView.transform = .identity
             }
         }
     }
+    
+}
+
+extension SeriesCollectionDelegate: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        delegate?.prefetchItems(at: indexPaths)
+    }
+    
 }

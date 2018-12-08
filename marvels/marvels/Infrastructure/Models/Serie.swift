@@ -8,13 +8,6 @@
 
 import Foundation
 
-public enum SerieType: String, Codable {
-    case limited
-    case collection
-    case ongoing
-    case undefined = ""
-}
-
 public struct Serie {
     
     let id: Int
@@ -23,7 +16,7 @@ public struct Serie {
     let startYear: Int?
     let endYear: Int?
     let rating: String?
-    let type: SerieType?
+    let type: String?
     let thumbnail: Thumbnail?
     let modified: String?
 }

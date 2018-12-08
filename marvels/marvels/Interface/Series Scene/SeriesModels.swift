@@ -13,6 +13,8 @@ enum SeriesModels {
     enum GetSeries {
         struct Request {
             let query: String?
+            let maxIndex: Int
+            let forceRefresh: Bool
         }
         
         struct Response {
@@ -47,12 +49,22 @@ enum SeriesModels {
     enum Error {
         
         struct PresentError {
-            let error: Error?
+            let error: Swift.Error?
         }
         
         struct DisplayError {
             let title: String?
             let message: String?
+        }
+    }
+    
+    enum Loading {
+        struct PresentLoading {
+        
+        }
+        
+        struct DisplayLoading {
+            
         }
     }
 }

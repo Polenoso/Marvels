@@ -18,29 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jGx-NX-IZ4">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CAG-x4-10m">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" sectionInsetReference="safeArea" id="fJe-Yo-8ve">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Title starts with.." translatesAutoresizingMaskIntoConstraints="NO" id="kq5-x8-jE2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                        <viewLayoutGuide key="safeArea" id="xDK-y7-kaq"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ef6-2p-mou" id="oO2-HO-mO9"/>
+                                        </connections>
+                                    </searchBar>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jGx-NX-IZ4">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" sectionInsetReference="safeArea" id="fJe-Yo-8ve">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jGx-NX-IZ4" firstAttribute="top" secondItem="s93-hg-HpZ" secondAttribute="top" id="Bg1-5B-DP8"/>
-                            <constraint firstItem="s93-hg-HpZ" firstAttribute="bottom" secondItem="jGx-NX-IZ4" secondAttribute="bottom" id="Ofs-wQ-U76"/>
-                            <constraint firstItem="s93-hg-HpZ" firstAttribute="trailing" secondItem="jGx-NX-IZ4" secondAttribute="trailing" id="PLK-z8-bSo"/>
-                            <constraint firstItem="jGx-NX-IZ4" firstAttribute="leading" secondItem="s93-hg-HpZ" secondAttribute="leading" id="TlF-9d-Duy"/>
+                            <constraint firstItem="CAG-x4-10m" firstAttribute="top" secondItem="s93-hg-HpZ" secondAttribute="top" id="BL8-Rc-Met"/>
+                            <constraint firstItem="CAG-x4-10m" firstAttribute="leading" secondItem="s93-hg-HpZ" secondAttribute="leading" id="VG6-0f-9fZ"/>
+                            <constraint firstItem="s93-hg-HpZ" firstAttribute="bottom" secondItem="CAG-x4-10m" secondAttribute="bottom" id="WZc-2u-fk7"/>
+                            <constraint firstItem="CAG-x4-10m" firstAttribute="trailing" secondItem="s93-hg-HpZ" secondAttribute="trailing" id="p1q-ov-PCw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s93-hg-HpZ"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="jGx-NX-IZ4" id="OKN-zk-L04"/>
+                        <outlet property="searchBar" destination="kq5-x8-jE2" id="c1b-Xm-3qe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4g-xE-EzV" userLabel="First Responder" sceneMemberID="firstResponder"/>
