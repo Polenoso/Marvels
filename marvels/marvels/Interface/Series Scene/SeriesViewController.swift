@@ -17,6 +17,7 @@ protocol SeriesOutputProtocol: class {
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel)
     func displayLoading(viewModel: SeriesModels.Loading.DisplayLoading)
     func displayError(viewModel: SeriesModels.Error.DisplayError)
+    func displaySelectedSerie(viewModel: SeriesModels.SelectSerie.ViewModel)
 }
 
 final class SeriesViewController: UIViewController {
@@ -94,6 +95,10 @@ extension SeriesViewController: SeriesOutputProtocol {
     func displayError(viewModel: SeriesModels.Error.DisplayError) {
         displayErrorMessage(viewModel.message, title: viewModel.title)
     }
+    
+    func displaySelectedSerie(viewModel: SeriesModels.SelectSerie.ViewModel) {
+        router?.navigateToDetail()
+    }
 }
 
 extension SeriesViewController: SeriesDelegate {
@@ -102,7 +107,7 @@ extension SeriesViewController: SeriesDelegate {
     }
     
     func didSelectItem(at index: IndexPath) {
-        //TODO call input
+        input?.selectedSerie(request: SeriesModels.SelectSerie.Request.init(index: index.item))
     }
 }
 
@@ -113,6 +118,5 @@ extension SeriesViewController: UISearchBarDelegate {
         if self.seriesCollectionViewDataSource?.items.count ?? 0 > 0 {
             self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
         }
-        
     }
 }

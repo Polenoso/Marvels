@@ -14,6 +14,6 @@
 
 //Marvel
 marvel_base_url     = gateway.marvel.com:443/v$(marvel_api_version)/public
-marvel_api_key      = ADD YOUR API KEY HERE
-marvel_private_key  = ADD YOUR API PRIVATE KEY HERE
+marvel_api_key      = 299a2b57d63037a28c4d0cbe2f001b37
+marvel_private_key  = a8e6210f3ed608f517e26177b8d9cec27b9e76d5
 marvel_api_version  = 1
