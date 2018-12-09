@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+enum ApplicationConstants: Double {
+    case initializationTimeout = 10.0
+}
+
 public final class Application {
     
     static var shared: Application = Application()
@@ -26,6 +30,8 @@ public final class Application {
         self.loadInitialConfiguration { (completed, error) in
             if(completed) {
                 self.loadRootController(window)
+            } else {
+                launchController.displayDiscardableAlertError(error!)
             }
         }
         
@@ -42,7 +48,7 @@ public final class Application {
     }
     
     private func loadInitialConfiguration(_ completionBlock: @escaping (_ completed:Bool, _ error:Error?) -> ()) {
-        let timer = Timer.scheduledTimer(withTimeInterval: Double(Environment.configuration(.timeout)) ?? 0, repeats: false) { (_) in
+        let timer = Timer.scheduledTimer(withTimeInterval: ApplicationConstants.initializationTimeout.rawValue, repeats: false) { (_) in
             completionBlock(false, Errors.timeout("It took too much time to load, please try again with a better connection"))
         }
         

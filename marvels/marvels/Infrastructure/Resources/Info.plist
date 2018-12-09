@@ -20,6 +20,11 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -40,12 +45,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>marvel_base_url</key>
-	<string>$(marvel_base_url)</string>
+	<string>https://$(marvel_base_url)</string>
 	<key>marvel_api_key</key>
 	<string>$(marvel_api_key)</string>
+	<key>marvel_private_key</key>
+	<string>$(marvel_private_key)</string>
 	<key>marvel_api_version</key>
 	<string>$marvel_api_version)</string>
-	<key>timeout</key>
-	<string>$(timeout)</string>
 </dict>
 </plist>

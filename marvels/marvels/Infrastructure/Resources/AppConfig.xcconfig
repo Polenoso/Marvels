@@ -10,9 +10,10 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 //Global
-timeout             = 10
+
 
 //Marvel
-marvel_base_url     = https:\/\/gateway.marvel.com:443/v$(marvel_api_version)/public
+marvel_base_url     = gateway.marvel.com:443/v$(marvel_api_version)/public
 marvel_api_key      = ADD YOUR API KEY HERE
+marvel_private_key  = ADD YOUR API PRIVATE KEY HERE
 marvel_api_version  = 1
