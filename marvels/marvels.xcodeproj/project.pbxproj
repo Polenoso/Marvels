@@ -44,6 +44,7 @@
 		D4D956E121BBE78200DC4C3D /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E021BBE78200DC4C3D /* UIImageView+Download.swift */; };
 		D4D956E521BD243000DC4C3D /* SeriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */; };
 		D4D956E721BD29EE00DC4C3D /* SeriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */; };
+		D4D956E921BD308F00DC4C3D /* OptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E821BD308F00DC4C3D /* OptionsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		D4D956E021BBE78200DC4C3D /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractorTests.swift; sourceTree = "<group>"; };
 		D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenterTests.swift; sourceTree = "<group>"; };
+		D4D956E821BD308F00DC4C3D /* OptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				D46ED33321B96B6C006EFC4B /* RootScene.storyboard */,
 				D46ED33521B96C0F006EFC4B /* RootViewController.swift */,
+				D4D956E821BD308F00DC4C3D /* OptionsFactory.swift */,
 			);
 			path = "Root Scene";
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				D46ED34C21B98138006EFC4B /* SeriesModels.swift in Sources */,
 				D4D956C421BAD3B000DC4C3D /* UIViewController+Display.swift in Sources */,
 				D46ED33621B96C0F006EFC4B /* RootViewController.swift in Sources */,
+				D4D956E921BD308F00DC4C3D /* OptionsFactory.swift in Sources */,
 				D4D956D921BBC6E400DC4C3D /* SeriesCollectionView.swift in Sources */,
 				D4D956C721BAD54800DC4C3D /* MarvelAPI.swift in Sources */,
 				D46ED34A21B9810D006EFC4B /* SeriesRouter.swift in Sources */,
