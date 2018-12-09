@@ -27,6 +27,12 @@ class SeriesWorkerSpy: SeriesWorkerProtocol {
 }
 
 class SeriesPresenterOutputSpy: SeriesWrapperProtocol {
+    
+    private(set) var presentSelectedSerieCalled = false
+    func presentSelectedSerie(response: SeriesModels.SelectSerie.Response) {
+        presentSelectedSerieCalled = true
+    }
+    
     private(set) var presentSeriesCalled = false
     func presentSeries(response: SeriesModels.GetSeries.Response) {
         presentSeriesCalled = true
@@ -97,6 +103,19 @@ class SeriesInteractorTests: XCTestCase {
         
         //Then
         XCTAssertTrue(outputSpy.presentErrorCalled, "Fetching series with error should call presenter to present error")
+    }
+    
+    func testSelectSerieShouldCallPresenterToPresentSerie() {
+        //Given
+        let outputSpy = SeriesPresenterOutputSpy()
+        interactor.series = [Serie.init(id: 0, title: nil, description: nil, startYear: nil, endYear: nil, rating: nil, type: nil, thumbnail: nil, modified: nil)]
+        interactor.outputWrapper = outputSpy
+        
+        //When
+        interactor.selectedSerie(request: SeriesModels.SelectSerie.Request.init(index: 0))
+        
+        //Then
+        XCTAssertTrue(outputSpy.presentSelectedSerieCalled, "Selecting serie should call presenter to present selected serie")
     }
 
 }

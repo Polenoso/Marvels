@@ -34,7 +34,7 @@ enum SeriesModels {
     
     enum SelectSerie {
         struct Request {
-            
+            let index: Int
         }
         
         struct Response {

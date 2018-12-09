@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SeriesNavigationProtocol: class {
     func navigateToDetail()
@@ -22,6 +23,9 @@ final class SeriesRouter: SeriesNavigationProtocol, SeriesDataPassing {
     weak var viewController: SeriesViewController?
     
     func navigateToDetail() {
-        
+        let storyboard = UIStoryboard(name: "SeriesDetail", bundle: Bundle.main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SeriesDetailViewController") as! SeriesDetailViewController
+        vc.router?.dataSource?.serie = self.dataSource?.selectedSerie
+        viewController?.present(vc, animated: true, completion: nil)
     }
 }

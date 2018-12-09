@@ -10,16 +10,17 @@ import Foundation
 
 protocol SeriesInputProtocol: class {
     func fetchSeries(request: SeriesModels.GetSeries.Request)
+    func selectedSerie(request: SeriesModels.SelectSerie.Request)
 }
 
 protocol SeriesDataSource {
-    var selectedSerie: Any? { get }
+    var selectedSerie: Serie? { get }
 }
 
 final class SeriesInteractor: SeriesInputProtocol, SeriesDataSource {
     
     let limit = 20
-    var selectedSerie: Any?
+    var selectedSerie: Serie?
     var series: [Serie] = []
     var outputWrapper: SeriesWrapperProtocol?
     var isLoading: Bool = false
@@ -51,6 +52,13 @@ final class SeriesInteractor: SeriesInputProtocol, SeriesDataSource {
             let result = self.series
             self.outputWrapper?.presentSeries(response: SeriesModels.GetSeries.Response.init(result: result))
         })
+    }
+    
+    func selectedSerie(request: SeriesModels.SelectSerie.Request) {
+        if request.index < series.count {
+            selectedSerie = series[request.index]
+            outputWrapper?.presentSelectedSerie(response: SeriesModels.SelectSerie.Response())
+        }
     }
     
     fileprivate func initLoading() {

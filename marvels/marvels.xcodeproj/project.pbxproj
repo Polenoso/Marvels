@@ -45,6 +45,14 @@
 		D4D956E521BD243000DC4C3D /* SeriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */; };
 		D4D956E721BD29EE00DC4C3D /* SeriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */; };
 		D4D956E921BD308F00DC4C3D /* OptionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E821BD308F00DC4C3D /* OptionsFactory.swift */; };
+		D4D956EC21BD378700DC4C3D /* SeriesDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4D956EB21BD378700DC4C3D /* SeriesDetail.storyboard */; };
+		D4D956EE21BD3DC800DC4C3D /* SeriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956ED21BD3DC800DC4C3D /* SeriesDetailViewController.swift */; };
+		D4D956F021BD406900DC4C3D /* SeriesDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956EF21BD406900DC4C3D /* SeriesDetailModels.swift */; };
+		D4D956F221BD488E00DC4C3D /* SeriesDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956F121BD488E00DC4C3D /* SeriesDetailPresenter.swift */; };
+		D4D956F421BD4A4D00DC4C3D /* SeriesDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956F321BD4A4D00DC4C3D /* SeriesDetailInteractor.swift */; };
+		D4D956F621BD4B2200DC4C3D /* SeriesDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956F521BD4B2200DC4C3D /* SeriesDetailRouter.swift */; };
+		D4D956FB21BD635100DC4C3D /* SeriesDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956FA21BD635100DC4C3D /* SeriesDetailInteractorTests.swift */; };
+		D4D956FD21BD668600DC4C3D /* SeriesDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956FC21BD668600DC4C3D /* SeriesDetailPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +109,14 @@
 		D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractorTests.swift; sourceTree = "<group>"; };
 		D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenterTests.swift; sourceTree = "<group>"; };
 		D4D956E821BD308F00DC4C3D /* OptionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsFactory.swift; sourceTree = "<group>"; };
+		D4D956EB21BD378700DC4C3D /* SeriesDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SeriesDetail.storyboard; sourceTree = "<group>"; };
+		D4D956ED21BD3DC800DC4C3D /* SeriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailViewController.swift; sourceTree = "<group>"; };
+		D4D956EF21BD406900DC4C3D /* SeriesDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailModels.swift; sourceTree = "<group>"; };
+		D4D956F121BD488E00DC4C3D /* SeriesDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailPresenter.swift; sourceTree = "<group>"; };
+		D4D956F321BD4A4D00DC4C3D /* SeriesDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailInteractor.swift; sourceTree = "<group>"; };
+		D4D956F521BD4B2200DC4C3D /* SeriesDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailRouter.swift; sourceTree = "<group>"; };
+		D4D956FA21BD635100DC4C3D /* SeriesDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailInteractorTests.swift; sourceTree = "<group>"; };
+		D4D956FC21BD668600DC4C3D /* SeriesDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +171,7 @@
 		D46ED31B21B94B7B006EFC4B /* marvelsTests */ = {
 			isa = PBXGroup;
 			children = (
+				D4D956F721BD621600DC4C3D /* Series Detail Tests */,
 				D4D956CE21BAF5D100DC4C3D /* Resources */,
 				D4D956CB21BAF42700DC4C3D /* Series Scene Tests */,
 				D46ED31C21B94B7B006EFC4B /* marvelsTests.swift */,
@@ -183,6 +200,7 @@
 			children = (
 				D4D956D121BBC2F600DC4C3D /* Components */,
 				D4D956C821BADE4F00DC4C3D /* Stores */,
+				D4D956EA21BD36D800DC4C3D /* Series Detail Scene */,
 				D46ED33E21B98050006EFC4B /* Series Scene */,
 				D46ED33221B96B2D006EFC4B /* Root Scene */,
 				D46ED32D21B95039006EFC4B /* LaunchApp */,
@@ -349,6 +367,28 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		D4D956EA21BD36D800DC4C3D /* Series Detail Scene */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956EB21BD378700DC4C3D /* SeriesDetail.storyboard */,
+				D4D956ED21BD3DC800DC4C3D /* SeriesDetailViewController.swift */,
+				D4D956EF21BD406900DC4C3D /* SeriesDetailModels.swift */,
+				D4D956F121BD488E00DC4C3D /* SeriesDetailPresenter.swift */,
+				D4D956F321BD4A4D00DC4C3D /* SeriesDetailInteractor.swift */,
+				D4D956F521BD4B2200DC4C3D /* SeriesDetailRouter.swift */,
+			);
+			path = "Series Detail Scene";
+			sourceTree = "<group>";
+		};
+		D4D956F721BD621600DC4C3D /* Series Detail Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956FA21BD635100DC4C3D /* SeriesDetailInteractorTests.swift */,
+				D4D956FC21BD668600DC4C3D /* SeriesDetailPresenterTests.swift */,
+			);
+			path = "Series Detail Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -436,6 +476,7 @@
 				D46ED31221B94B7B006EFC4B /* LaunchScreen.storyboard in Resources */,
 				D46ED30F21B94B7B006EFC4B /* Assets.xcassets in Resources */,
 				D46ED34021B9807F006EFC4B /* SeriesScene.storyboard in Resources */,
+				D4D956EC21BD378700DC4C3D /* SeriesDetail.storyboard in Resources */,
 				D4D956DD21BBCF4000DC4C3D /* SeriesCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +522,7 @@
 				D46ED32C21B94DD3006EFC4B /* Application.swift in Sources */,
 				D46ED35521B9AA34006EFC4B /* String+Tools.swift in Sources */,
 				D4D956CA21BADE6700DC4C3D /* SeriesStore.swift in Sources */,
+				D4D956F021BD406900DC4C3D /* SeriesDetailModels.swift in Sources */,
 				D46ED32F21B95056006EFC4B /* LaunchScreenViewController.swift in Sources */,
 				D46ED34421B980C0006EFC4B /* SeriesWorker.swift in Sources */,
 				D46ED34221B98097006EFC4B /* SeriesViewController.swift in Sources */,
@@ -490,8 +532,10 @@
 				D4D956C421BAD3B000DC4C3D /* UIViewController+Display.swift in Sources */,
 				D46ED33621B96C0F006EFC4B /* RootViewController.swift in Sources */,
 				D4D956E921BD308F00DC4C3D /* OptionsFactory.swift in Sources */,
+				D4D956F221BD488E00DC4C3D /* SeriesDetailPresenter.swift in Sources */,
 				D4D956D921BBC6E400DC4C3D /* SeriesCollectionView.swift in Sources */,
 				D4D956C721BAD54800DC4C3D /* MarvelAPI.swift in Sources */,
+				D4D956F421BD4A4D00DC4C3D /* SeriesDetailInteractor.swift in Sources */,
 				D46ED34A21B9810D006EFC4B /* SeriesRouter.swift in Sources */,
 				D46ED30821B94B79006EFC4B /* AppDelegate.swift in Sources */,
 				D4D956DC21BBCF4000DC4C3D /* SeriesCollectionViewCell.swift in Sources */,
@@ -502,6 +546,8 @@
 				D46ED35221B995C2006EFC4B /* Network.swift in Sources */,
 				D4D956E121BBE78200DC4C3D /* UIImageView+Download.swift in Sources */,
 				D46ED33A21B9753B006EFC4B /* Environment.swift in Sources */,
+				D4D956F621BD4B2200DC4C3D /* SeriesDetailRouter.swift in Sources */,
+				D4D956EE21BD3DC800DC4C3D /* SeriesDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +557,9 @@
 			files = (
 				D4D956E521BD243000DC4C3D /* SeriesInteractorTests.swift in Sources */,
 				D4D956CD21BAF45B00DC4C3D /* SeriesWorkerTests.swift in Sources */,
+				D4D956FB21BD635100DC4C3D /* SeriesDetailInteractorTests.swift in Sources */,
 				D46ED31D21B94B7B006EFC4B /* marvelsTests.swift in Sources */,
+				D4D956FD21BD668600DC4C3D /* SeriesDetailPresenterTests.swift in Sources */,
 				D4D956E721BD29EE00DC4C3D /* SeriesPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
