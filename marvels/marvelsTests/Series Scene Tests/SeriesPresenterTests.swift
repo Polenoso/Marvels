@@ -10,6 +10,11 @@ import XCTest
 @testable import marvels
 
 class SeriesViewOutputSpy: SeriesOutputProtocol {
+    private(set) var displaySelectedSerieCalled = false
+    func displaySelectedSerie(viewModel: SeriesModels.SelectSerie.ViewModel) {
+        displaySelectedSerieCalled = true
+    }
+    
     private(set) var displaySeriesCalled = false
     func displaySeries(viewModel: SeriesModels.GetSeries.ViewModel) {
         displaySeriesCalled = true
@@ -73,6 +78,18 @@ class SeriesPresenterTests: XCTestCase {
         
         //Then
         XCTAssertTrue(outputSpy.displayLoadingCalled, "Presenting loading should call output to display loading")
+    }
+    
+    func testPresentSelectedSerieShouldCallOutputDisplaySelectedSerie() {
+        //Given
+        let outputSpy = SeriesViewOutputSpy()
+        presenter.output = outputSpy
+        
+        //When
+        presenter.presentSelectedSerie(response: SeriesModels.SelectSerie.Response())
+        
+        //Then
+        XCTAssertTrue(outputSpy.displaySelectedSerieCalled, "Presenting selected serie should call output to display selected serie")
     }
 
 }

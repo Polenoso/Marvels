@@ -55,8 +55,10 @@ final class SeriesInteractor: SeriesInputProtocol, SeriesDataSource {
     }
     
     func selectedSerie(request: SeriesModels.SelectSerie.Request) {
-        selectedSerie = series[request.index]
-        outputWrapper?.presentSelectedSerie(response: SeriesModels.SelectSerie.Response())
+        if request.index < series.count {
+            selectedSerie = series[request.index]
+            outputWrapper?.presentSelectedSerie(response: SeriesModels.SelectSerie.Response())
+        }
     }
     
     fileprivate func initLoading() {

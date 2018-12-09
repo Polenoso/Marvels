@@ -17,7 +17,7 @@ final class SeriesDetailPresenter: SeriesDetailOutputWrapper {
     weak var output: SeriesDetailOutput?
     
     func presentDetail(response: SeriesDetailModels.GetDetail.Response) {
-        let image = URL(string: response.result.thumbnail?.fullPath() ?? "")!
+        let image = URL(string: response.result.thumbnail?.fullPath() ?? "") ?? URL(string: "err")!
         let title = response.result.title ?? ""
         var details:[String] = []
         if let description = response.result.description, !description.isEmpty {
