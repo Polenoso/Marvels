@@ -68,6 +68,7 @@ final class SeriesViewController: UIViewController {
     
     private func setupCollectionView() {
         collectionView.prefetchDataSource = seriesDelegate
+        collectionView.allowsMultipleSelection = false
         seriesDelegate.delegate = self
         seriesCollectionViewDataSource = SeriesCollectionViewDataSource(items: [], collectionView: self.collectionView, delegate: seriesDelegate)
     }
@@ -97,7 +98,10 @@ extension SeriesViewController: SeriesOutputProtocol {
     }
     
     func displaySelectedSerie(viewModel: SeriesModels.SelectSerie.ViewModel) {
-        router?.navigateToDetail()
+        guard let index = collectionView.indexPathsForSelectedItems?.first,
+            let attributes = collectionView.layoutAttributesForItem(at: index) else { return }
+        let frame = collectionView.convert(attributes.frame, to: self.view)
+        router?.navigateToDetail(frame)
     }
 }
 

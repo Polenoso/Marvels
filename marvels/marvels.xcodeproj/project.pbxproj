@@ -53,6 +53,9 @@
 		D4D956F621BD4B2200DC4C3D /* SeriesDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956F521BD4B2200DC4C3D /* SeriesDetailRouter.swift */; };
 		D4D956FB21BD635100DC4C3D /* SeriesDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956FA21BD635100DC4C3D /* SeriesDetailInteractorTests.swift */; };
 		D4D956FD21BD668600DC4C3D /* SeriesDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956FC21BD668600DC4C3D /* SeriesDetailPresenterTests.swift */; };
+		D4D9570021BDA53600DC4C3D /* CollectionPresentAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956FF21BDA53600DC4C3D /* CollectionPresentAnimationTransition.swift */; };
+		D4D9570221BDA8A700DC4C3D /* CollectionDismissAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9570121BDA8A700DC4C3D /* CollectionDismissAnimationTransition.swift */; };
+		D4D9570421BDAA4B00DC4C3D /* CollectionCardTransitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9570321BDAA4B00DC4C3D /* CollectionCardTransitionContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,9 @@
 		D4D956F521BD4B2200DC4C3D /* SeriesDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailRouter.swift; sourceTree = "<group>"; };
 		D4D956FA21BD635100DC4C3D /* SeriesDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailInteractorTests.swift; sourceTree = "<group>"; };
 		D4D956FC21BD668600DC4C3D /* SeriesDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailPresenterTests.swift; sourceTree = "<group>"; };
+		D4D956FF21BDA53600DC4C3D /* CollectionPresentAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPresentAnimationTransition.swift; sourceTree = "<group>"; };
+		D4D9570121BDA8A700DC4C3D /* CollectionDismissAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDismissAnimationTransition.swift; sourceTree = "<group>"; };
+		D4D9570321BDAA4B00DC4C3D /* CollectionCardTransitionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCardTransitionContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +350,7 @@
 		D4D956D121BBC2F600DC4C3D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D4D956FE21BDA4B100DC4C3D /* Transitioning */,
 				D4D956D221BBC30700DC4C3D /* Collection View */,
 			);
 			path = Components;
@@ -387,6 +394,16 @@
 				D4D956FC21BD668600DC4C3D /* SeriesDetailPresenterTests.swift */,
 			);
 			path = "Series Detail Tests";
+			sourceTree = "<group>";
+		};
+		D4D956FE21BDA4B100DC4C3D /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				D4D956FF21BDA53600DC4C3D /* CollectionPresentAnimationTransition.swift */,
+				D4D9570121BDA8A700DC4C3D /* CollectionDismissAnimationTransition.swift */,
+				D4D9570321BDAA4B00DC4C3D /* CollectionCardTransitionContext.swift */,
+			);
+			name = Transitioning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,9 +553,12 @@
 				D4D956D921BBC6E400DC4C3D /* SeriesCollectionView.swift in Sources */,
 				D4D956C721BAD54800DC4C3D /* MarvelAPI.swift in Sources */,
 				D4D956F421BD4A4D00DC4C3D /* SeriesDetailInteractor.swift in Sources */,
+				D4D9570021BDA53600DC4C3D /* CollectionPresentAnimationTransition.swift in Sources */,
 				D46ED34A21B9810D006EFC4B /* SeriesRouter.swift in Sources */,
 				D46ED30821B94B79006EFC4B /* AppDelegate.swift in Sources */,
+				D4D9570221BDA8A700DC4C3D /* CollectionDismissAnimationTransition.swift in Sources */,
 				D4D956DC21BBCF4000DC4C3D /* SeriesCollectionViewCell.swift in Sources */,
+				D4D9570421BDAA4B00DC4C3D /* CollectionCardTransitionContext.swift in Sources */,
 				D4D956DF21BBE11A00DC4C3D /* UIView+Tools.swift in Sources */,
 				D46ED34621B980D0006EFC4B /* SeriesInteractor.swift in Sources */,
 				D46ED34821B980EB006EFC4B /* SeriesPresenter.swift in Sources */,
