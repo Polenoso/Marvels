@@ -42,6 +42,8 @@
 		D4D956DD21BBCF4000DC4C3D /* SeriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D956DB21BBCF4000DC4C3D /* SeriesCollectionViewCell.xib */; };
 		D4D956DF21BBE11A00DC4C3D /* UIView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956DE21BBE11A00DC4C3D /* UIView+Tools.swift */; };
 		D4D956E121BBE78200DC4C3D /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E021BBE78200DC4C3D /* UIImageView+Download.swift */; };
+		D4D956E521BD243000DC4C3D /* SeriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */; };
+		D4D956E721BD29EE00DC4C3D /* SeriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		D4D956DB21BBCF4000DC4C3D /* SeriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4D956DE21BBE11A00DC4C3D /* UIView+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Tools.swift"; sourceTree = "<group>"; };
 		D4D956E021BBE78200DC4C3D /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
+		D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractorTests.swift; sourceTree = "<group>"; };
+		D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				D4D956CC21BAF45B00DC4C3D /* SeriesWorkerTests.swift */,
+				D4D956E421BD243000DC4C3D /* SeriesInteractorTests.swift */,
+				D4D956E621BD29EE00DC4C3D /* SeriesPresenterTests.swift */,
 			);
 			path = "Series Scene Tests";
 			sourceTree = "<group>";
@@ -499,8 +505,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D956E521BD243000DC4C3D /* SeriesInteractorTests.swift in Sources */,
 				D4D956CD21BAF45B00DC4C3D /* SeriesWorkerTests.swift in Sources */,
 				D46ED31D21B94B7B006EFC4B /* marvelsTests.swift in Sources */,
+				D4D956E721BD29EE00DC4C3D /* SeriesPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

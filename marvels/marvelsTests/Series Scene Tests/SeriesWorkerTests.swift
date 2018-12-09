@@ -51,7 +51,7 @@ class SeriesWorkerTests: XCTestCase {
         //Given
         let seriesMockStore = SeriesMockStore()
         let worker = SeriesWorker(with: seriesMockStore)
-        worker.seriesCache = []
+        worker.cleanCache()
         let expectation = self.expectation(description: "ExpectSeries")
         
         //When
@@ -69,8 +69,8 @@ class SeriesWorkerTests: XCTestCase {
         //Given
         let seriesMockStore = SeriesMockStore()
         let worker = SeriesWorker(with: seriesMockStore)
-        worker.seriesCache = Set<Serie>.init(seriesMockStore.series[1...10])
-        let expectation = self.expectation(description: "ExpectSeries")
+        SeriesWorker.seriesCache = Set<Serie>.init(seriesMockStore.series[1...10])
+        let expectation = self.expectation(description: "ExpectMoreSeries")
         
         //When
         worker.fetchSeries(with: "", offset: 0, minCount: 20) { (_, _) in
@@ -81,6 +81,24 @@ class SeriesWorkerTests: XCTestCase {
         
         //Then
         XCTAssertTrue(seriesMockStore.fetchCalled, "Fetching series with uncompleted cache call store to fetch more series")
+    }
+    
+    func testFetchSeriesWithOffsetGreaterThanCacheShouldCallStoreToFetchSeries() {
+        //Given
+        let seriesMockStore = SeriesMockStore()
+        let worker = SeriesWorker(with: seriesMockStore)
+        SeriesWorker.seriesCache = Set<Serie>.init(seriesMockStore.series)
+        let expectation = self.expectation(description: "ExpectNoCacheSeries")
+        
+        //When
+        worker.fetchSeries(with: "", offset: 20, minCount: 20) { (_, _) in
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 3.0, handler: nil)
+        
+        //Then
+        XCTAssertTrue(seriesMockStore.fetchCalled, "Fetching series with greater offset call store to fetch more series")
     }
     
 }

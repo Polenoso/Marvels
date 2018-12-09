@@ -19,7 +19,7 @@ final class SeriesWorker: SeriesWorkerProtocol {
     
     var seriesStore: SeriesStore?
     
-    private static var seriesCache: Set<Serie> = Set<Serie>()
+    static var seriesCache: Set<Serie> = Set<Serie>()
     
     init(with store: SeriesStore) {
         self.seriesStore = store
